@@ -4,12 +4,11 @@ import { noRootFilesNodeModulesNameClash } from '../../rules'
 
 export default ({ rules }) => Joi.object({
   alias: Joi.object().pattern(/.+/, Joi.string()),
-  root: Joi.array().items(
+  modules: Joi.array().items(
     rules['no-root-files-node-modules-nameclash']
     ? absolutePath.concat(noRootFilesNodeModulesNameClash)
     : absolutePath
   ).single(),
-  modulesDirectories: Joi.array().items(Joi.string()),
   fallback: Joi.array().items(absolutePath).single(),
   extensions: Joi.array().items([Joi.string().regex(/\..+/), Joi.string().valid('')]),
   packageMains: Joi.array(),
