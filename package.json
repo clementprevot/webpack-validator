@@ -2,6 +2,7 @@
   "name": "webpack2-validator",
   "description": "Validate your webpack2 config with joi",
   "main": "dist",
+  "version": "1.0.0",
   "bin": "./dist/bin/webpack-validator.js",
   "files": [
     "dist"
