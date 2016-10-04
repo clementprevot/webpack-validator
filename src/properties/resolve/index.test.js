@@ -14,9 +14,7 @@ const problematicRootPaths = [
 const validModuleConfigs = [
   { input: { alias: { foo: 'bar' } } },
   { input: { alias: { foo: 'bar' } } },
-  { input: { root: 'exists' } },
-  { input: { root: ['exists', 'exists'] } },
-  { input: { modulesDirectories: ['node_modules', 'bower_foo'] } },
+  { input: { modules: ['exists', 'exists'] } },
   { input: { fallback: ['exists', 'exists'] } },
   { input: { extensions: ['', '.foo'] } },
   { input: { packageMains: ['webpack', 'browser', 'web', 'browserify', ['jam', 'main'], 'main'] } },
@@ -27,7 +25,7 @@ const validModuleConfigs = [
   {
     input: {
       // These won't throw however because we disabled the rule
-      root: problematicRootPaths,
+      modules: problematicRootPaths,
     },
     schema: schemaFn({ rules: { 'no-root-files-node-modules-nameclash': false } }),
   },
@@ -39,15 +37,14 @@ const invalidModuleConfigs = [
   {
     // It exists but is not absolute
     // file existence stubbed out in test/setup.js
-    input: { root: './exists' },
+    input: { modules: './exists' },
     schema: schemaFn({ rules: { 'no-root-files-node-modules-nameclash': false } }),
   },
-  { input: { root: '/does-not-exist' } }, // must exist
-  { input: { modulesDirectories: 'node_modules' } },
+  { input: { modules: '/does-not-exist' } }, // must exist
   { input: { extensions: ['', 'bar'] } }, // must have leading dot
   { input: { unsafeCache: false } }, // must have true
   {
-    input: { root: problematicRootPaths },
+    input: { modules: problematicRootPaths },
     error: { type: 'path.noRootFilesNodeModulesNameClash' },
   },
 ]

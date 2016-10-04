@@ -21,7 +21,7 @@ const lessModuleLoader = (prod) => {
 export const makeConfig = ({production}) => ({
   resolve: {
     extensions: ['', '.js', '.jsx'],
-    modulesDirectories: ['node_modules', 'src'],
+    modules: ['node_modules/exists', 'src/exists'],
   },
   entry: {
     app: production

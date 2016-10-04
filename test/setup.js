@@ -37,8 +37,8 @@ sinon.stub(shell, 'ls', function(path_, couldBePath) {
   } else {
     throw new Error(
       `You should handle the path "${path}" in the shell.ls stub. ` +
-      'It its a path that should not exist, include the string "does-not-exist", ' +
-      'It it should exist, include the string "exists", '
+      'If its a path that should not exist, include the string "does-not-exist", ' +
+      'If it should exist, include the string "exists", '
     )
   }
 })

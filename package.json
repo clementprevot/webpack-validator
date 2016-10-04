@@ -1,6 +1,6 @@
 {
-  "name": "webpack-validator",
-  "description": "Validate your webpack config with joi",
+  "name": "webpack2-validator",
+  "description": "Validate your webpack2 config with joi",
   "main": "dist",
   "bin": "./dist/bin/webpack-validator.js",
   "files": [
@@ -21,14 +21,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/js-dxtools/webpack-validator.git"
+    "url": "https://github.com/clementprevot/webpack-validator.git"
   },
   "contributors": [
     "Jonathan Werner <jwe@posteo.de> (http://jonathanwerner.net)",
     "Juho Vepsäläinen (http://survivejs.com/)",
     "Kent C. Dodds <kent@doddsfamily.us> (http://kentcdodds.com/)",
     "Martin Schmid",
-    "Sarbbottam Bandyopadhyay"
+    "Sarbbottam Bandyopadhyay",
+    "Clément P."
   ],
   "license": "MIT",
   "babel": {
@@ -86,7 +87,7 @@
     "with-package": "0.2.0"
   },
   "keywords": [
-    "webpack",
+    "webpack2",
     "config",
     "schema",
     "validation",
